@@ -1,40 +1,44 @@
-<!-- multistep form -->
-<link rel="stylesheet" href="index.css">
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="demo.js"></script>
-<form id="msform">
-    <!-- progressbar -->
-    <ul id="progressbar">
-      <li class="active">Account Setup</li>
-      <li>Social Profiles</li>
-      <li>Personal Details</li>
-    </ul>
-    <!-- fieldsets -->
-    <fieldset>
-      <h2 class="fs-title">Create your account</h2>
-      <h3 class="fs-subtitle">This is step 1</h3>
-      <input type="text" name="email" placeholder="Email" />
-      <input type="password" name="pass" placeholder="Password" />
-      <input type="password" name="cpass" placeholder="Confirm Password" />
-      <input type="button" name="next" class="next action-button" value="Next" />
-    </fieldset>
-    <fieldset>
-      <h2 class="fs-title">Social Profiles</h2>
-      <h3 class="fs-subtitle">Your presence on the social network</h3>
-      <input type="text" name="twitter" placeholder="Twitter" />
-      <input type="text" name="facebook" placeholder="Facebook" />
-      <input type="text" name="gplus" placeholder="Google Plus" />
-      <input type="button" name="previous" class="previous action-button" value="Previous" />
-      <input type="button" name="next" class="next action-button" value="Next" />
-    </fieldset>
-    <fieldset>
-      <h2 class="fs-title">Personal Details</h2>
-      <h3 class="fs-subtitle">We will never sell it</h3>
-      <input type="text" name="fname" placeholder="First Name" />
-      <input type="text" name="lname" placeholder="Last Name" />
-      <input type="text" name="phone" placeholder="Phone" />
-      <textarea name="address" placeholder="Address"></textarea>
-      <input type="button" name="previous" class="previous action-button" value="Previous" />
-      <input type="submit" name="submit" class="submit action-button" value="Submit" />
-    </fieldset>
-  </form>
+<link rel="stylesheet" href="style.css">
+<div class="modal-wrap">
+  <div class="modal-header"><span class="is-active"></span><span></span><span></span></div>
+  <div class="modal-bodies">
+    <div class="modal-body modal-body-step-1 is-showing">
+      <div class="title">Step 1</div>
+      <div class="description">Hello there, Let's play a game.</div>
+      <form>
+        <input type="text" placeholder="Name"/>
+        <input type="email" placeholder="Email"/>
+        <div class="text-center">
+          <div class="button" id="target">Start</div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-body modal-body-step-2">
+      <div class="title">Step 2</div>
+      <div class="description">Would you rather</div>
+      <form>
+        <label>
+          <input type="radio" name="radio"/>live one life that lasts 1,000 years?
+        </label>
+        <label>
+          <input id="radio2" type="radio" name="radio"/>live 10 lives that last 100 years each?
+        </label>
+        <div class="text-center fade-in">
+          <div class="button">Next</div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-body modal-body-step-3">
+      <div class="title">Step 3</div>
+      <div class="description">Check your email for the game results.</div>
+      <div class="text-center">
+        <div class="button">Done!</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="text-center">
+  <div class="rerun-button">ReRun</div>
+</div>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="script.js"></script>
