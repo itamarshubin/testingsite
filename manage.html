@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
+        <link rel="stylesheet" href="manage.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  
+    <script type="text/javascript">
+        function showHideRow(row) {
+            $("#" + row).toggle();
+        }
+    </script>
+    </head>
+    
+    <body>
+        <div id="wrapper">
+            
+            <table border=1 id="table_detail" 
+            align=center cellpadding=10>
+            
+            <tr>
+                <th>Email</th>
+                <th>Location</th>
+                <th>Name</th>
+                <th>Phone Number</th>
+            </tr>
+            </table>
+        </div>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyAV7qKtGKxWihRDWKHeIaP-0fEGGhpwU5M",
+                authDomain: "mrbin-68ee4.firebaseapp.com",
+                projectId: "mrbin-68ee4",
+                storageBucket: "mrbin-68ee4.appspot.com",
+                messagingSenderId: "676759233035",
+                appId: "1:676759233035:web:a810849e018f2262e0dd0e",
+                measurementId: "G-JHS2RZXFE1"
+            };
+            firebase.initializeApp(config);
+            const db = firebase.firestore();
+            db.settings({ timestampsInSnapshots: true }); 
+        </script>
+        <script src="manage.js"></script>
+    </body>
+    </html>
