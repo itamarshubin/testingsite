@@ -1,3 +1,16 @@
+var firebaseConfig = {
+  apiKey: "AIzaSyDwRRrtX6o7_vszkx-iFYsvKIcUJytzgXQ",
+  authDomain: "mrbin-bd0b7.firebaseapp.com",
+  databaseURL: "https://mrbin-bd0b7-default-rtdb.firebaseio.com",
+  projectId: "mrbin-bd0b7",
+  storageBucket: "mrbin-bd0b7.appspot.com",
+  messagingSenderId: "723872622971",
+  appId: "1:723872622971:web:1fa55f56c03eaecd0175de",
+  measurementId: "G-9QREQ80PQ0"
+};
+
+
+
 $('.button').click(function(){
 
   var $btn = $(this),
