@@ -172,12 +172,17 @@ function updateFireBase (){
       ).then(function(docRef){
           thisIsvar=docRef.id;
           console.log("we addd with this Id:", docRef.id);
+
       }).catch(function(error){
           console.log("something is wrong with this Id:", docRef.id);
       });
 
 
-      
+      function done(){
+
+        alert("fuckkkkkk");
+        window.location.href = "https://itamarshubin.github.io/testingsite/progress.html?key="+docRef.id
+      }
 
 
     //   db.doc().set({
