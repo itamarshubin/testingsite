@@ -1,42 +1,46 @@
-<!-- multistep form -->
-<meta charset="utf-8"/>
-<form id="msform">
-  <!-- progressbar -->
-  <ul id="progressbar">
-    <li class="active">פרטי תקלה</li>
-    <li>יצירת קשר</li>
-    <li>סיום</li>
-  </ul>
-  <!-- fieldsets -->
-  <fieldset>
-    <h2 class="fs-title">מלא את הפרטים</h2>
-    <input type="name" name="userName" placeholder="שם" style="text-align: right;"  />
-    <input type="name" name="location" placeholder="מיקום התקלה" style="text-align: right;"  />
-    <textarea  type="name" name="theProblem" placeholder="תאר בבקשה את הבעייה" style="text-align: right;" ></textarea>
-    <input type="button" name="next" class="next action-button" value="הבא" />
-  </fieldset>
-  <fieldset>
-    <h2 class="fs-title">דרכי יצירת קשר</h2>
-    <h3 class="fs-subtitle">?איך תרצה שנודיע לך שהתקלה טופלה <br> אם אתה לא רוצה, השאר ריק</h3>
-    <input type="text" name="email" placeholder="כתובת מייל" style="text-align: right;" />
-    <input type="text" name="phoneNumber" placeholder="מספר טלפון" style="text-align: right;"/>
-    <input type="button" name="previous" class="previous action-button" value="הקודם" />
-    <input type="button" name="next" class="next action-button" value="הבא" />
-  </fieldset>
-  <fieldset>
-    <h2 class="fs-title">תודה</h2>
-    <h3 class="fs-subtitle">אנחנו עובדים על פתרון לחץ על סיום כדי להגיש את הפנייה</h3>
-
-    <input type="button" name="previous" class="previous action-button" value="הקודם" />
-    <input type="submit" name="submit" class="submit action-button" value="סיום"/>
-  </fieldset>
-</form>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<link rel="stylesheet" href="style.css">
+<div class="modal-wrap">
+  <div class="modal-header"><span class="is-active"></span><span></span><span></span></div>
+  <div class="modal-bodies">
+    <div class="modal-body modal-body-step-1 is-showing">
+      <div class="title">Step 1</div>
+      <div class="description">Hello there, Please let use know what happend</div>
+      <form>
+        <input type="text" placeholder="Name" id="userName"/>
+        <input type="email" placeholder="Email" id="userEmail"/>
+        <div class="text-center">
+          <div class="button" id="target">Start</div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-body modal-body-step-2">
+      <div class="title">Step 2</div>
+      <div class="description">Would you rather</div>
+      <form>
+        <label>
+          <input type="radio" name="radio"/>live one life that lasts 1,000 years?
+        </label>
+        <label>
+          <input id="radio2" type="radio" name="radio"/>live 10 lives that last 100 years each?
+        </label>
+        <div class="text-center fade-in">
+          <div class="button">Next</div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-body modal-body-step-3">
+      <div class="title">Step 3</div>
+      <div class="description">Check your email for the game results.</div>
+      <div class="text-center">
+        <div class="button">Done!</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="text-center">
+  <div class="rerun-button">ReRun</div>
+</div>
 <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
-<link rel="stylesheet" href="style.css">
-
-
-
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script src="script.js"></script>

@@ -1,0 +1,106 @@
+<html>
+  <head></head>
+  </html>
+  <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <link rel="stylesheet" href="progress.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+  <section>
+    <!--for demo wrap-->
+    <h1 id="shit">פנייה מספר:ךדגכיחעדג</h1>
+    <div class="tbl-header">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <thead>
+          <tr>
+            <th>לא התקבל</th>
+            <th>התקבל</th>
+            <th>בטיפול</th>
+            <th>הועבר לגורמים הרלוונטים</th>
+            <th>הסתיים</th>
+            
+          </tr>
+          <tr>
+            <td colspan="5" id="father">
+              
+              </div>
+              
+            </td>
+          </tr>
+        </thead>
+      </table>
+      
+    </section>
+    
+    
+    <script>
+      // function letsTrySomeFuckingShit(){
+        let params = new URLSearchParams(location.search);
+        console.log(params.get('key'));
+        
+        document.getElementById("shit").innerHTML=params.get('key')+":פנייה מספר";
+        
+        // }
+        </script>
+
+<script>
+  
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAV7qKtGKxWihRDWKHeIaP-0fEGGhpwU5M",
+    authDomain: "mrbin-68ee4.firebaseapp.com",
+    projectId: "mrbin-68ee4",
+    storageBucket: "mrbin-68ee4.appspot.com",
+    messagingSenderId: "676759233035",
+    appId: "1:676759233035:web:a810849e018f2262e0dd0e",
+    measurementId: "G-JHS2RZXFE1"
+  };
+  firebase.initializeApp(config);
+  const db = firebase.firestore();
+  db.settings({ timestampsInSnapshots: true });
+  
+  
+</script>
+  <script src="progress.js"></script>
+  
+<script>
+
+db.collection('Data').doc(params.get('key')).get().then((doc)=>{
+  if(doc.exists){
+    if(doc.data().status=="לא התקבל")
+      setNumber(10);
+    else
+    if(doc.data().status=="התקבל")
+      setNumber(30);
+    else
+    if(doc.data().status=="בטיפול")
+      setNumber(50);
+    else
+    if(doc.data().status=="הועבר לגורמים הרלוונטים")
+      setNumber(70);
+    else
+    if(doc.data().status=="הסתיים")
+      setNumber(100);
+    else
+    alert(doc.data().status);
+  }
+})
+
+
+
+function setNumber(number){
+        let progBar = document.createElement('div');
+        let progBarPross = document.createElement('div')
+
+        progBarPross.setAttribute('class','progress-bar progress');
+        progBar.setAttribute('data-progress-percent',''+number);
+        progBar.setAttribute('class','progress-wrap progress');
+
+
+        progBar.appendChild(progBarPross);
+
+        let father = document.getElementById("father");
+        father.appendChild(progBar);
+         moveProgressBar();
+}
+</script>
