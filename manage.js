@@ -68,7 +68,6 @@ db.collection('Data').get().then(snapshot => {
 
 function updateStatus(){
 
-
 var table,rows,x;
 table=document.getElementById("table_detail");
 rows= table.rows;

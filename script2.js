@@ -11,7 +11,7 @@ $(".next").click(function(){
     var location = document.getElementsByName("location")[0];
     var theProblem = document.getElementsByName("theProblem")[0];
     
-        if (inputName.value == ""||location.value == ""||theProblem.va=="") {
+        if (inputName.value == ""||location.value == ""||theProblem.value=="") {
             alert("חסר פרטים");
         }
         else
@@ -90,10 +90,8 @@ $(".previous").click(function(){
 	});
 });
 
-$(".submit").click(function(){
-    updateFireBase();
-	return false;
-});
+	
+
 
 
 
@@ -130,6 +128,8 @@ function printFromFireBase(){
 
 
 function updateFireBase (){
+
+
     var firebaseConfig = {
         apiKey: "AIzaSyAV7qKtGKxWihRDWKHeIaP-0fEGGhpwU5M",
         authDomain: "mrbin-68ee4.firebaseapp.com",
@@ -145,20 +145,20 @@ function updateFireBase (){
       firebase.initializeApp(firebaseConfig);
       var firestore = firebase.firestore();
 
-      const db = firestore.collection("Data");
+      const db = firestore.collection('Data');
 
       var inputName = document.getElementsByName("userName")[0];
       var location = document.getElementsByName("location")[0];
       var theProblem = document.getElementsByName("theProblem")[0];
       var email = document.getElementsByName("email")[0];
       var phoneNumber = document.getElementsByName("phoneNumber")[0];
+      var status = "לא התקבל";
 
       let userNameInput = inputName.value;
       let locationInput = location.value;
       let messageInput = theProblem.value;
       let emailInput = email.value;
       let phoneNumberInput = phoneNumber.value;
-      
 
       db.add
       (
@@ -167,24 +167,23 @@ function updateFireBase (){
             location: locationInput,
             message: messageInput,
             email: emailInput,
-            phoneNumber: phoneNumberInput
+            phoneNumber: phoneNumberInput,
+            status: status
         }
       ).then(function(docRef){
           thisIsvar=docRef.id;
-          console.log("we addd with this Id:", docRef.id);
-
+          console.log("added with this Id:", docRef.id);
+           window.location.href = "/progress.html?key="+docRef.id
       }).catch(function(error){
           console.log("something is wrong with this Id:", docRef.id);
       });
 
-
-      function done(){
-
-        alert("fuckkkkkk");
-        window.location.href = "https://itamarshubin.github.io/testingsite/progress.html?key="+docRef.id
-      }
+     
+      
 
 
+
+      
     //   db.doc().set({
     //       name: userNameInput,
     //       location: locationInput,
@@ -199,3 +198,4 @@ function updateFireBase (){
 
       return 0;
 }
+
