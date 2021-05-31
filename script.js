@@ -173,7 +173,7 @@ function updateFireBase (){
       ).then(function(docRef){
           thisIsvar=docRef.id;
           console.log("added with this Id:", docRef.id);
-           window.location.href = "/progress.html?key="+docRef.id
+           window.location.href = "/testingsite/progress.html?key="+docRef.id
       }).catch(function(error){
           console.log("something is wrong with this Id:", docRef.id);
       });
